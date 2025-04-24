@@ -1,5 +1,12 @@
 ---
 title: "Lab-10"
-format: html
+author:
+  - name: Chris Drew
+    email: "cdrew02@colostate.edu"
+format:
+  html:
+    self-contained: true
+execute:
+  echo: true
 ---
 
