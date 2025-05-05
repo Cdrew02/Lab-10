@@ -1,0 +1,9 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - lab-10.qmd
+
+format:
+  html:
+    self-contained: true
