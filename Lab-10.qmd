@@ -196,4 +196,25 @@ ggplot() +
 
 
 ```
+```{r}
+library(terra)
+
+url <- '/vsicurl/https://raw.githubusercontent.com/mikejohnson51/csu-ess-330/refs/heads/main/resources/foco-elev-cm.tif'
+elev_rast <- rast(url)
+elev_rast
+elev_rast_ft <- elev_rast * 0.0328084
+elev_df <- values(elev_rast_ft, dataframe = TRUE)
+library(ggpubr)
+library(ggplot2)
+
+gg_density <- ggplot(elev_df, aes(x = dem)) + 
+  geom_density(fill = "steelblue", alpha = 0.6) +
+  labs(title = "Elevation Distribution in Fort Collins",
+       x = "Elevation (feet)",
+       y = "Density") +
+  theme_pubclean()
+
+print(gg_density)
+
+```
 
